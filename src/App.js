@@ -18,7 +18,7 @@ function App() {
     else
     {
       setMode("dark");
-      document.body.style.backgroundColor = "#3a4b5f";
+      document.body.style.backgroundColor = "#1c2939";
       document.body.style.color = "white"
     }
   }
