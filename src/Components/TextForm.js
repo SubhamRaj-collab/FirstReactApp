@@ -84,7 +84,7 @@ export default function TextForm(props) {
             <p>{wordlength} words, {text.length} characters</p>
             <p>{0.008*wordlength} minutes read</p>
             <h4>Preview:</h4>
-            <p>{text}</p>
+            <p>{text.length>0?text:"Enter text above to preview here"}</p>
         </div>
     </>
   )
