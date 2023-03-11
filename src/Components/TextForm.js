@@ -6,12 +6,14 @@ export default function TextForm(props) {
         // console.log("UpperCase was clicked"+text)
         let newText = text.toUpperCase();
         setText(newText)
+        props.showAlert("Text changed to UpperCase", "success");
     } 
 
     const handleLoClick = ()=>{
         // console.log("UpperCase was clicked"+text)
         let newText = text.toLowerCase();
         setText(newText)
+        props.showAlert("Text changed to LowerCase", "success");
     } 
 
     const handleOnChange = (event)=>{
@@ -20,13 +22,15 @@ export default function TextForm(props) {
     }
 
     const handleClearClick = ()=>{
-        setText("")
+        setText("");
+        props.showAlert("Text Cleared", "success");
     }
 
     const handleCopy = ()=>{
         let thisText = document.getElementById("textBox");
         thisText.select();
         navigator.clipboard.writeText(thisText.value);
+        props.showAlert("Text Copied", "success");
     }
 
     const handleCaseChangeClick = ()=>{
@@ -45,11 +49,13 @@ export default function TextForm(props) {
             
         }
         setText(sent)
+        props.showAlert("Case Changed", "success");
     }
 
     const handleExtraSpaces = ()=>{
         let newText = text.split(/[ ]+/);
-        setText(newText.join(" "))
+        setText(newText.join(" "));
+        props.showAlert("Extra Spaces Removed", "success");
     }
 
     const[text, setText] = useState("")
