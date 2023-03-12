@@ -30,6 +30,7 @@ export default function TextForm(props) {
         let thisText = document.getElementById("textBox");
         thisText.select();
         navigator.clipboard.writeText(thisText.value);
+        document.getSelection().removeAllRanges();
         props.showAlert("Text Copied", "success");
     }
 
@@ -79,17 +80,17 @@ export default function TextForm(props) {
   return (
     <>
         <div className = "container">
-            <h1>{props.heading}</h1>
+            <h1 className='mb-4'>{props.heading}</h1>
             <div className="mb-3">
                 <textarea className="form-control" id="textBox" 
             onChange={handleOnChange} value={text} rows="8" style={{backgroundColor: props.mode==='dark'?'#465579':'white', color:props.mode==='light'?'black':'white'}}></textarea>
             </div>
-            <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
-            <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>Convert to Lowercase</button>
-            <button className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear</button>
-            <button className="btn btn-primary mx-1 my-1" onClick={handleCaseChangeClick}>ChangeCase</button>
-            <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy Text</button>
-            <button className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+            <button disabled = {text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+            <button disabled = {text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>Convert to Lowercase</button>
+            <button disabled = {text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear</button>
+            <button disabled = {text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCaseChangeClick}>ChangeCase</button>
+            <button disabled = {text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy Text</button>
+            <button disabled = {text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
         </div>
         <div className="container my-3">
             <h3>Your Text Summary</h3>
