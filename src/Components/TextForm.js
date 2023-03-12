@@ -27,10 +27,7 @@ export default function TextForm(props) {
     }
 
     const handleCopy = ()=>{
-        let thisText = document.getElementById("textBox");
-        thisText.select();
-        navigator.clipboard.writeText(thisText.value);
-        document.getSelection().removeAllRanges();
+        navigator.clipboard.writeText(text);
         props.showAlert("Text Copied", "success");
     }
 
@@ -70,7 +67,7 @@ export default function TextForm(props) {
     // This is not working.
     // Code is changed below
 
-    let wordLength = text.split(" ").filter((element)=>{
+    let wordLength = text.split(/\s+/).filter((element)=>{
         return element.length !== 0
     }).length;
 

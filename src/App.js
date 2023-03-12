@@ -28,7 +28,21 @@ function App() {
     }, 1500);
   }
 
-  const blueToggleMode = () =>{
+  // const removeBodyClass = () =>
+  // {
+  //   document.body.classList.remove('bg-danger')
+  //   document.body.classList.remove('bg-white')
+  //   document.body.classList.remove('bg-warning')
+  //   document.body.classList.remove('bg-success')
+  //   document.body.classList.remove('bg-primary')
+  // }
+
+  // const toggleMode = (cls) =>{
+
+  const toggleMode = () =>{
+    // console.log(cls);
+    // removeBodyClass();
+    // document.body.classList.add('bg-'+cls)
     if(mode === "dark")
     {
       setMode("light");
@@ -56,44 +70,44 @@ function App() {
     }
   }
 
-  const greenToggleMode = () =>{
-    if(mode === "dark")
-    {
-      setMode("light");
-      document.body.style.backgroundColor = "white";
-      document.body.style.color = "black";
-      showAlert("Light Mode Enabled", "success")
-    }
-    else
-    {
-      setMode("dark");
-      document.body.style.backgroundColor = "#172f14";
-      document.body.style.color = "white";
-      showAlert("Dark Mode Enabled", "success")
-    }
-  }
+  // const greenToggleMode = () =>{
+  //   if(mode === "dark")
+  //   {
+  //     setMode("light");
+  //     document.body.style.backgroundColor = "white";
+  //     document.body.style.color = "black";
+  //     showAlert("Light Mode Enabled", "success")
+  //   }
+  //   else
+  //   {
+  //     setMode("dark");
+  //     document.body.style.backgroundColor = "#172f14";
+  //     document.body.style.color = "white";
+  //     showAlert("Dark Mode Enabled", "success")
+  //   }
+  // }
 
-  const redToggleMode = () =>{
-    if(mode === "dark")
-    {
-      setMode("light");
-      document.body.style.backgroundColor = "white";
-      document.body.style.color = "black";
-      showAlert("Light Mode Enabled", "success")
-    }
-    else
-    {
-      setMode("dark");
-      document.body.style.backgroundColor = "#240b0b";
-      document.body.style.color = "white";
-      showAlert("Dark Mode Enabled", "success")
-    }
-  }
+  // const redToggleMode = () =>{
+  //   if(mode === "dark")
+  //   {
+  //     setMode("light");
+  //     document.body.style.backgroundColor = "white";
+  //     document.body.style.color = "black";
+  //     showAlert("Light Mode Enabled", "success")
+  //   }
+  //   else
+  //   {
+  //     setMode("dark");
+  //     document.body.style.backgroundColor = "#240b0b";
+  //     document.body.style.color = "white";
+  //     showAlert("Dark Mode Enabled", "success")
+  //   }
+  // }
 
   return (
     <>
     <Router>
-      <Navbar title = "TextUtils" aboutText="About Us" mode={mode} blueToggleMode={blueToggleMode} greenToggleMode={greenToggleMode} redToggleMode={redToggleMode}/>
+      <Navbar title = "TextUtils" aboutText="About Us" mode={mode} toggleMode={toggleMode}/>
       <Alert alert = {alert}/>
       <div className="container my-3">
 
@@ -109,7 +123,7 @@ function App() {
           <Route exact path="/about" element={<About mode={mode}/>} />
             
           <Route exact path="/" element={
-            <TextForm heading="Enter the text below to analyze" mode={mode} showAlert={showAlert} blueToggleMode={blueToggleMode} greenToggleMode={greenToggleMode} redToggleMode={redToggleMode}/>
+            <TextForm heading="Enter the text below to analyze" mode={mode} showAlert={showAlert} toggleMode={toggleMode}/>
           } />
             
             {/* <TextForm heading="Enter the text below to analyze" mode={mode} showAlert={showAlert} blueToggleMode={blueToggleMode} greenToggleMode={greenToggleMode} redToggleMode={redToggleMode}/> */}

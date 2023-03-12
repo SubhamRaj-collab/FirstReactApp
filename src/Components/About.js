@@ -55,7 +55,7 @@ export default function About(props) {
                 </button>
                 </h2>
                 <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div className="accordion-body" style = {myStyle}>
+                <div className="accordion-body" style = {style2}>
                     <strong>This is the first item's accordion body.</strong> TextUtils gives you a way to analyze your text quickly and efficiently. Be it word count, character count or any other operation. 
                 </div>
                 </div>
@@ -67,7 +67,7 @@ export default function About(props) {
                 </button>
                 </h2>
                 <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div className="accordion-body" style = {myStyle}>
+                <div className="accordion-body" style = {style2}>
                     <strong>This is the second item's accordion body.</strong> Text Utils is free character counting tool that provides instant character count & word count statistics for a given text. TextUtils reports the number of words and characters. Thus it is suitable for writing text with word/ character limit. 
                 </div>
                 </div>
@@ -79,7 +79,7 @@ export default function About(props) {
                 </button>
                 </h2>
                 <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div className="accordion-body" style = {myStyle}>
+                <div className="accordion-body" style = {style2}>
                     <strong>This is the third item's accordion body.</strong> This word counter software works in any browser such as chrome, firefox, Internet Explorer, Safari, Opera. It suits to count characters in facebook, blog, books, excel document, pdf, essays, etc.
                 </div>
                 </div>
