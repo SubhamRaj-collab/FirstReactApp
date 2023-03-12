@@ -60,12 +60,18 @@ export default function TextForm(props) {
 
     const[text, setText] = useState("")
 
-    const texts = text.split(" ")
-    let wordlength = texts.length
-    if(text.charAt(text.length-1) === ' ' || text === "")
-    {
-        wordlength--;
-    }
+    // const texts = text.split(" ")
+    // let wordlength = texts.length
+    // if(text.charAt(text.length-1) === ' ' || text === "")
+    // {
+    //     wordlength--;
+    // }
+    // This is not working.
+    // Code is changed below
+
+    let wordLength = text.split(" ").filter((element)=>{
+        return element.length !== 0
+    }).length;
 
     // text = "new Text";  //Wrong way to change state
     // setText("new Text"); //Correct way to change state
@@ -78,17 +84,17 @@ export default function TextForm(props) {
                 <textarea className="form-control" id="textBox" 
             onChange={handleOnChange} value={text} rows="8" style={{backgroundColor: props.mode==='dark'?'grey':'white', color:props.mode==='light'?'grey':'white'}}></textarea>
             </div>
-            <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
-            <button className="btn btn-primary mx-1" onClick={handleLoClick}>Convert to Lowercase</button>
-            <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear</button>
-            <button className="btn btn-primary mx-1" onClick={handleCaseChangeClick}>ChangeCase</button>
-            <button className="btn btn-primary mx-1" onClick={handleCopy}>Copy Text</button>
-            <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>Convert to Lowercase</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleCaseChangeClick}>ChangeCase</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy Text</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
         </div>
         <div className="container my-3">
             <h3>Your Text Summary</h3>
-            <p>{wordlength} words, {text.length} characters</p>
-            <p>{0.008*wordlength} minutes read</p>
+            <p>{wordLength} words, {text.length} characters</p>
+            <p>{0.008*wordLength} minutes read</p>
             <h4>Preview:</h4>
             <p>{text.length>0?text:"Enter text above to preview here"}</p>
         </div>

@@ -1,15 +1,15 @@
 import './App.css';
 import React, {useState} from 'react'
-// import About from './Components/About';
+import About from './Components/About';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm'
 import Alert from './Components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-//   // Link
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  // Link
+} from "react-router-dom";
 
 function App() {
 
@@ -92,7 +92,7 @@ function App() {
 
   return (
     <>
-    {/* <Router> */}
+    <Router>
       <Navbar title = "TextUtils" aboutText="About Us" mode={mode} blueToggleMode={blueToggleMode} greenToggleMode={greenToggleMode} redToggleMode={redToggleMode}/>
       <Alert alert = {alert}/>
       <div className="container my-3">
@@ -105,18 +105,18 @@ function App() {
           if we do not use exact path below
         
          */}
-        {/* <Routes> */}
-          {/* <Route exact path="/about" element={<About />} /> */}
+        <Routes>
+          <Route exact path="/about" element={<About />} />
             
-          {/* <Route exact path="/" element={
+          <Route exact path="/" element={
             <TextForm heading="Enter the text below to analyze" mode={mode} showAlert={showAlert} blueToggleMode={blueToggleMode} greenToggleMode={greenToggleMode} redToggleMode={redToggleMode}/>
-          } /> */}
+          } />
             
-            <TextForm heading="Enter the text below to analyze" mode={mode} showAlert={showAlert} blueToggleMode={blueToggleMode} greenToggleMode={greenToggleMode} redToggleMode={redToggleMode}/>
+            {/* <TextForm heading="Enter the text below to analyze" mode={mode} showAlert={showAlert} blueToggleMode={blueToggleMode} greenToggleMode={greenToggleMode} redToggleMode={redToggleMode}/> */}
 
-        {/* </Routes> */}
+        </Routes>
       </div>
-    {/* </Router> */}
+    </Router>
     </>
   );
 }
